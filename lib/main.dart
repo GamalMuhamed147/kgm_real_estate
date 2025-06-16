@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'screens/splash_screen.dart';
 
 void main() {
   runApp(const RealEstateApp());
@@ -15,16 +16,23 @@ class RealEstateApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         primarySwatch: Colors.teal,
-        fontFamily: 'Roboto',
       ),
-      home: const Scaffold(
-        body: Center(
-          child: Text(
-            'KGM Real Estate',
-            style: TextStyle(fontSize: 24),
-          ),
-        ),
-      ),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const SplashScreen(),
+        '/home': (context) => const HomeScreen(),
+      },
+    );
+  }
+}
+
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      body: Center(child: Text('Welcome to KGM Real Estate')),
     );
   }
 }
