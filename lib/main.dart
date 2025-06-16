@@ -18,7 +18,12 @@ class RealEstateApp extends StatelessWidget {
         fontFamily: 'Roboto',
       ),
       home: const Scaffold(
-        body: Center(child: Text('KGM Real Estate')),
+        body: Center(
+          child: Text(
+            'KGM Real Estate',
+            style: TextStyle(fontSize: 24),
+          ),
+        ),
       ),
     );
   }
